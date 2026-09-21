@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfoAcadémica - Inicio</title>
+  <meta name="description" content="InfoAcadémica: mantente al día con tu proceso académico. Noticias de admisiones, registro y vida académica.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- Framework CSS: Bootstrap 5 -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos propios -->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-md navbar-infoacademica sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">InfoAcadémica</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="menuPrincipal">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="admisiones.html">Admisiones</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro-academico.html">Registro Académico</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero container">
+      <h1>MANTENTE AL DÍA CON TU PROCESO ACADÉMICO</h1>
+      <p>Encuentra las últimas noticias sobre Admisiones, Registro y Control y Vida Académica</p>
+    </section>
+
+    <!-- ===================== NOTICIAS DESTACADAS ===================== -->
+    <section class="container mb-5">
+      <div class="row" id="contenedor-noticias" data-limite="3">
+        <img src="noticia-01.png" class="img-fluid" alt="Noticia">
+        <img src="noticia-02.png" class="img-fluid" alt="Noticia">
+        <img src="noticia-03.png" class="img-fluid" alt="Noticia">
+
+        <!-- Las tarjetas de noticias se generan dinámicamente con js/noticias.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-infoacademica">
+    &copy; 2026 InfoAcadémica - Todos los derechos reservados
+  </footer>
+
+  <!-- Framework JS: Bootstrap 5 (bundle incluye Popper) -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/noticias-data.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+

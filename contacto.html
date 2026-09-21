@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfoAcadémica - Contacto</title>
+  <meta name="description" content="Contáctanos: envíanos tus preguntas sobre tu proceso académico.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-infoacademica sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">InfoAcadémica</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="menuPrincipal">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="admisiones.html">Admisiones</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro-academico.html">Registro Académico</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <h1 class="section-title">CONTÁCTANOS</h1>
+
+      <form id="form-contacto" class="contacto-form row justify-content-center g-3 needs-validation" novalidate>
+        <div class="col-12 col-md-8 col-lg-6">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required minlength="2">
+          <div class="invalid-feedback text-center">Por favor ingresa tu nombre.</div>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-6">
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" class="form-control" id="correo" name="correo" required>
+          <div class="invalid-feedback text-center">Ingresa un correo electrónico válido.</div>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-6">
+          <label for="mensaje">Mensaje</label>
+          <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required minlength="10"></textarea>
+          <div class="invalid-feedback text-center">Escribe tu mensaje (mínimo 10 caracteres).</div>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <button type="submit" class="btn btn-oscuro">Enviar</button>
+          <div id="alerta-envio" class="alert alert-success alert-envio" role="alert"></div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer-infoacademica">
+    &copy; 2026 InfoAcadémica - Todos los derechos reservados
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/contacto.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
