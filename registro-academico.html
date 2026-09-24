@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>InfoAcadémica - Registro Académico</title>
-  <meta name="description" content="Sección de Registro Académico de InfoAcadémica.">
+  <meta name="description" content="Registro y control académico: matrícula, materias, cancelaciones y trámites.">
   <link rel="icon" type="image/png" href="img/favicon.png">
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -12,7 +12,8 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-md navbar-infoacademica sticky-top">
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-infoacademica sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">InfoAcadémica</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
@@ -24,6 +25,8 @@
           <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
           <li class="nav-item"><a class="nav-link" href="admisiones.html">Admisiones</a></li>
           <li class="nav-item"><a class="nav-link" href="registro-academico.html">Registro Académico</a></li>
+          <li class="nav-item"><a class="nav-link" href="favoritos.html">Favoritos</a></li>
+          <li class="nav-item"><a class="nav-link" href="gestion.html">Gestión</a></li>
           <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
@@ -31,20 +34,131 @@
   </nav>
 
   <main>
-    <div class="container placeholder-page">
-      <div class="icono">📋</div>
-      <h1 class="section-title mt-0">REGISTRO ACADÉMICO</h1>
-      <p class="text-muted">
-        Esta sección se desarrollará en una próxima entrega del proyecto.
-        Aquí encontrarás la información sobre registro y control de materias,
-        cancelaciones, homologaciones y trámites académicos.
-      </p>
-      <a href="noticias.html" class="btn btn-oscuro mt-3">Ver noticias de Registro Académico</a>
+    <!-- ===================== ENCABEZADO DE SECCIÓN ===================== -->
+    <section class="seccion-hero">
+      <div class="container">
+        <h1>REGISTRO ACADÉMICO</h1>
+        <p>Gestiona tu matrícula, tus materias y los trámites de tu vida académica.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- ---------- Introducción ---------- -->
+      <section class="mb-5">
+        <p class="texto-seccion">
+          La oficina de Registro y Control Académico centraliza los trámites relacionados con
+          tu matrícula, la inscripción de materias y la actualización de tu información. Aquí
+          encuentras un resumen de los servicios más consultados por los estudiantes.
+        </p>
+      </section>
+
+      <!-- ---------- Servicios ---------- -->
+      <section class="mb-5">
+        <h2 class="subseccion-title">Trámites frecuentes</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="servicio-card">
+              <h3>Matrícula de materias</h3>
+              <p>Inscribe tus asignaturas del periodo dentro de las fechas establecidas en el calendario académico.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="servicio-card">
+              <h3>Cancelación de materias</h3>
+              <p>Solicita la cancelación de una o varias asignaturas antes de la fecha límite del semestre.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="servicio-card">
+              <h3>Homologaciones</h3>
+              <p>Convalida materias cursadas en otra institución o programa presentando los soportes requeridos.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="servicio-card">
+              <h3>Certificados y constancias</h3>
+              <p>Solicita certificados de notas, de estudio o constancias de matrícula desde el sistema SIGA.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="servicio-card">
+              <h3>Reingreso</h3>
+              <p>Retoma tus estudios tras un periodo de inactividad actualizando tu situación académica.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="servicio-card">
+              <h3>Actualización de datos</h3>
+              <p>Mantén al día tu información personal y de contacto para recibir las notificaciones oficiales.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Fechas clave ---------- -->
+      <section class="mb-5">
+        <h2 class="subseccion-title">Fechas clave del semestre</h2>
+        <div class="table-responsive">
+          <table class="table tabla-info">
+            <thead>
+              <tr>
+                <th>Trámite</th>
+                <th>Periodo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Matrícula de materias</td><td>15 al 31 de enero de 2027</td></tr>
+              <tr><td>Ajuste de matrícula (adiciones)</td><td>01 al 07 de febrero de 2027</td></tr>
+              <tr><td>Cancelación de materias</td><td>Hasta el 15 de abril de 2027</td></tr>
+              <tr><td>Solicitud de certificados</td><td>Todo el semestre</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ---------- Llamado a la acción ---------- -->
+      <section class="cta-seccion mb-5">
+        <h2>¿Necesitas ayuda con un trámite?</h2>
+        <p>Escríbenos y un asesor de Registro y Control te orientará.</p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          <a href="contacto.html" class="btn btn-oscuro">Contáctanos</a>
+          <a href="noticias.html" class="btn btn-outline-secondary">Ver noticias académicas</a>
+        </div>
+      </section>
     </div>
   </main>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer-infoacademica">
-    &copy; 2026 InfoAcadémica - Todos los derechos reservados
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>InfoAcadémica</h4>
+          <p>Mantente al día con tu proceso académico: admisiones, registro y vida universitaria.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="admisiones.html">Admisiones</a></li>
+            <li><a href="registro-academico.html">Registro Académico</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>Calle 123 #45-67, Bogotá</li>
+            <li>+57 (1) 123 4567</li>
+            <li>contacto@infoacademica.edu.co</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; <span id="anio">2026</span> InfoAcadémica - Todos los derechos reservados
+      </div>
+    </div>
   </footer>
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

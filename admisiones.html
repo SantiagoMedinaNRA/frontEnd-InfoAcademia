@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>InfoAcadémica - Admisiones</title>
-  <meta name="description" content="Sección de Admisiones de InfoAcadémica.">
+  <meta name="description" content="Proceso de admisión de InfoAcadémica: requisitos, pasos y calendario.">
   <link rel="icon" type="image/png" href="img/favicon.png">
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -12,7 +12,8 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-md navbar-infoacademica sticky-top">
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-infoacademica sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">InfoAcadémica</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
@@ -24,6 +25,8 @@
           <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
           <li class="nav-item"><a class="nav-link" href="admisiones.html">Admisiones</a></li>
           <li class="nav-item"><a class="nav-link" href="registro-academico.html">Registro Académico</a></li>
+          <li class="nav-item"><a class="nav-link" href="favoritos.html">Favoritos</a></li>
+          <li class="nav-item"><a class="nav-link" href="gestion.html">Gestión</a></li>
           <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
@@ -31,20 +34,136 @@
   </nav>
 
   <main>
-    <div class="container placeholder-page">
-      <div class="icono">🎓</div>
-      <h1 class="section-title mt-0">ADMISIONES</h1>
-      <p class="text-muted">
-        Esta sección se desarrollará en una próxima entrega del proyecto.
-        Aquí encontrarás el detalle del proceso de admisión, los requisitos
-        por programa y el calendario oficial.
-      </p>
-      <a href="noticias.html" class="btn btn-oscuro mt-3">Ver noticias de Admisiones</a>
+    <!-- ===================== ENCABEZADO DE SECCIÓN ===================== -->
+    <section class="seccion-hero">
+      <div class="container">
+        <h1>ADMISIONES</h1>
+        <p>Todo lo que necesitas saber para iniciar tu proceso de ingreso a la institución.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- ---------- Introducción ---------- -->
+      <section class="mb-5">
+        <p class="texto-seccion">
+          El proceso de admisión de la Fundación Tecnológica Autónoma de Bogotá (FABA) está
+          diseñado para acompañarte paso a paso. Aquí encontrarás los requisitos, las etapas
+          del proceso y el calendario del periodo 2027-1.
+        </p>
+      </section>
+
+      <!-- ---------- Pasos del proceso ---------- -->
+      <section class="mb-5">
+        <h2 class="subseccion-title">Pasos del proceso</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="paso-card">
+              <div class="paso-numero">1</div>
+              <h3>Inscripción</h3>
+              <p>Regístrate en el sistema SIGA y completa el formulario de aspirante.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="paso-card">
+              <div class="paso-numero">2</div>
+              <h3>Documentos</h3>
+              <p>Adjunta tu documento de identidad y el diploma o acta de grado.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="paso-card">
+              <div class="paso-numero">3</div>
+              <h3>Prueba de admisión</h3>
+              <p>Presenta la prueba en la fecha asignada según el programa elegido.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="paso-card">
+              <div class="paso-numero">4</div>
+              <h3>Confirmación de cupo</h3>
+              <p>Consulta los resultados y realiza el pago de matrícula para asegurar tu cupo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Requisitos ---------- -->
+      <section class="mb-5">
+        <h2 class="subseccion-title">Requisitos generales</h2>
+        <ul class="lista-requisitos">
+          <li>Documento de identidad vigente.</li>
+          <li>Diploma de bachiller o acta de grado.</li>
+          <li>Resultado de las pruebas de Estado (Saber 11).</li>
+          <li>Fotografía reciente tipo documento.</li>
+          <li>Formulario de inscripción diligenciado en el sistema SIGA.</li>
+        </ul>
+      </section>
+
+      <!-- ---------- Calendario ---------- -->
+      <section class="mb-5">
+        <h2 class="subseccion-title">Calendario 2027-1</h2>
+        <div class="table-responsive">
+          <table class="table tabla-info">
+            <thead>
+              <tr>
+                <th>Etapa</th>
+                <th>Fecha</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Apertura de inscripciones</td><td>01 de octubre de 2026</td></tr>
+              <tr><td>Cierre de inscripciones</td><td>15 de noviembre de 2026</td></tr>
+              <tr><td>Prueba de admisión</td><td>22 de noviembre de 2026</td></tr>
+              <tr><td>Publicación de resultados</td><td>05 de diciembre de 2026</td></tr>
+              <tr><td>Pago de matrícula</td><td>06 al 20 de diciembre de 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ---------- Llamado a la acción ---------- -->
+      <section class="cta-seccion mb-5">
+        <h2>¿Tienes dudas sobre tu proceso de admisión?</h2>
+        <p>Nuestro equipo de asesores está listo para ayudarte.</p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          <a href="contacto.html" class="btn btn-oscuro">Contáctanos</a>
+          <a href="noticias.html" class="btn btn-outline-secondary">Ver noticias de admisiones</a>
+        </div>
+      </section>
     </div>
   </main>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer-infoacademica">
-    &copy; 2026 InfoAcadémica - Todos los derechos reservados
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>InfoAcadémica</h4>
+          <p>Mantente al día con tu proceso académico: admisiones, registro y vida universitaria.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="admisiones.html">Admisiones</a></li>
+            <li><a href="registro-academico.html">Registro Académico</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>Calle 123 #45-67, Bogotá</li>
+            <li>+57 (1) 123 4567</li>
+            <li>contacto@infoacademica.edu.co</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; <span id="anio">2026</span> InfoAcadémica - Todos los derechos reservados
+      </div>
+    </div>
   </footer>
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

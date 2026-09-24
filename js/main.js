@@ -2,10 +2,11 @@
  * main.js
  * Lógica general compartida por todas las páginas del sitio:
  * - Resalta el enlace activo del menú de navegación.
- * - Inserta el año actual en el footer (si aplica).
+ * - Inserta el año actual en el footer (si existe el elemento #anio).
  */
 document.addEventListener("DOMContentLoaded", function () {
   resaltarEnlaceActivo();
+  actualizarAnioFooter();
 });
 
 function resaltarEnlaceActivo() {
@@ -17,4 +18,11 @@ function resaltarEnlaceActivo() {
       enlace.setAttribute("aria-current", "page");
     }
   });
+}
+
+function actualizarAnioFooter() {
+  const anio = document.getElementById("anio");
+  if (anio) {
+    anio.textContent = new Date().getFullYear();
+  }
 }
