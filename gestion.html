@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfoAcadémica - Gestión de Noticias</title>
+  <meta name="description" content="Crea y elimina noticias de InfoAcadémica (gestión básica).">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-infoacademica sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">InfoAcadémica</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="menuPrincipal">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="admisiones.html">Admisiones</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro-academico.html">Registro Académico</a></li>
+          <li class="nav-item"><a class="nav-link" href="favoritos.html">Favoritos</a></li>
+          <li class="nav-item"><a class="nav-link" href="gestion.html">Gestión</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <h1 class="section-title">GESTIÓN DE NOTICIAS</h1>
+      <p class="text-center text-muted mb-4">
+        Crea nuevas noticias o elimina las existentes. Los cambios se guardan en
+        tu navegador (localStorage) y se reflejan en el Home y en el listado de Noticias.
+      </p>
+
+      <div class="row g-4">
+        <!-- ---------- Formulario: crear noticia ---------- -->
+        <div class="col-12 col-lg-5">
+          <div class="gestion-card">
+            <h2 class="gestion-subtitulo">Crear noticia</h2>
+            <form id="form-noticia" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" required minlength="5">
+                <div class="invalid-feedback">Ingresa un título (mínimo 5 caracteres).</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="resumen" class="form-label">Resumen</label>
+                <input type="text" class="form-control" id="resumen" name="resumen" required minlength="10">
+                <div class="invalid-feedback">Ingresa un resumen breve (mínimo 10 caracteres).</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="imagen" class="form-label">Ruta de imagen (opcional)</label>
+                <input type="text" class="form-control" id="imagen" name="imagen" placeholder="img/noticia-destacada.jpg">
+                <small class="text-muted">Si la dejas vacía se usa la imagen por defecto (img/noticia-destacada.jpg).</small>
+              </div>
+
+              <div class="mb-3">
+                <label for="cuerpo" class="form-label">Contenido</label>
+                <textarea class="form-control" id="cuerpo" name="cuerpo" rows="5" required minlength="20"
+                  placeholder="Escribe el contenido de la noticia. Deja una línea en blanco para separar párrafos."></textarea>
+                <div class="invalid-feedback">Escribe el contenido de la noticia (mínimo 20 caracteres).</div>
+              </div>
+
+              <button type="submit" class="btn btn-oscuro">Publicar noticia</button>
+              <div id="alerta-gestion" class="alert alert-success alert-envio" role="alert"></div>
+            </form>
+          </div>
+        </div>
+
+        <!-- ---------- Listado: eliminar noticias ---------- -->
+        <div class="col-12 col-lg-7">
+          <div class="gestion-card">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+              <h2 class="gestion-subtitulo mb-0">Noticias publicadas</h2>
+              <button id="btn-restaurar" type="button" class="btn btn-outline-secondary btn-sm">
+                Restaurar noticias de ejemplo
+              </button>
+            </div>
+            <div id="lista-gestion" class="lista-gestion">
+              <!-- Filas generadas dinámicamente por js/gestion.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-infoacademica">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>InfoAcadémica</h4>
+          <p>Mantente al día con tu proceso académico: admisiones, registro y vida universitaria.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="admisiones.html">Admisiones</a></li>
+            <li><a href="registro-academico.html">Registro Académico</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>Calle 123 #45-67, Bogotá</li>
+            <li>+57 (1) 123 4567</li>
+            <li>contacto@infoacademica.edu.co</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; <span id="anio">2026</span> InfoAcadémica - Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/noticias-data.js"></script>
+  <script src="js/gestion.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
