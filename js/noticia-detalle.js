@@ -1,20 +1,41 @@
 /**
  * noticia-detalle.js
  * Lee el parámetro "id" de la URL (?id=1) y pinta el contenido de la
- * noticia correspondiente en noticia.html. También maneja el botón
- * "Agregar a favoritos", guardando la selección en localStorage para
- * que se recuerde entre visitas (sin necesidad de backend todavía).
+ * noticia correspondiente en noticia.html usando NoticiasStore. También
+ * maneja el botón "Agregar a favoritos", guardando la selección en
+ * localStorage para que se recuerde entre visitas (sin backend todavía).
  */
 document.addEventListener("DOMContentLoaded", function () {
-  if (typeof NOTICIAS === "undefined") return;
+  if (typeof NoticiasStore === "undefined") return;
 
   const parametros = new URLSearchParams(window.location.search);
-  const id = parseInt(parametros.get("id"), 10) || NOTICIAS[0].id;
-  const noticia = NOTICIAS.find((n) => n.id === id) || NOTICIAS[0];
+  const idSolicitado = parseInt(parametros.get("id"), 10);
+  const noticia = NoticiasStore.obtenerPorId(idSolicitado) || NoticiasStore.obtenerTodas()[0];
+
+  if (!noticia) {
+    mostrarNoEncontrada();
+    return;
+  }
 
   pintarNoticia(noticia);
   configurarFavorito(noticia.id);
 });
+
+function mostrarNoEncontrada() {
+  const titulo = document.getElementById("noticia-titulo");
+  const cuerpo = document.getElementById("noticia-cuerpo");
+  const imagen = document.getElementById("noticia-imagen");
+  const boton = document.getElementById("btn-favorito");
+
+  if (imagen) imagen.style.display = "none";
+  if (boton) boton.style.display = "none";
+  if (titulo) titulo.textContent = "Noticia no encontrada";
+  if (cuerpo) {
+    cuerpo.innerHTML =
+      '<p class="cuerpo">La noticia que buscas no existe o fue eliminada. ' +
+      'Vuelve al <a href="noticias.html">listado de noticias</a>.</p>';
+  }
+}
 
 function pintarNoticia(noticia) {
   document.title = noticia.titulo + " - InfoAcadémica";
@@ -31,8 +52,17 @@ function pintarNoticia(noticia) {
     titulo.textContent = noticia.titulo;
   }
   if (cuerpo) {
-    cuerpo.innerHTML = noticia.cuerpo.map((parrafo) => `<p class="cuerpo">${parrafo}</p>`).join("");
+    cuerpo.innerHTML = noticia.cuerpo
+      .map((parrafo) => `<p class="cuerpo">${escaparTexto(parrafo)}</p>`)
+      .join("");
   }
+}
+
+/** Escapa texto para insertarlo de forma segura dentro del HTML. */
+function escaparTexto(texto) {
+  const div = document.createElement("div");
+  div.textContent = texto == null ? "" : String(texto);
+  return div.innerHTML;
 }
 
 function configurarFavorito(idNoticia) {
