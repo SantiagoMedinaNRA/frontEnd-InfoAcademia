@@ -11,11 +11,10 @@ la maquetación (mockups) definida en la primera entrega.
 
 ## Integrantes
 
-<!-- Completa aquí los nombres de los integrantes del grupo -->
-
 - Marta Teresa Velandia Urrego 
 - Carlos Mosquera Urrutia 
-- Santiago Medina Peláez 
+- Santiago Medina Peláez
+- Laura Sofia Castellanos Manrique
 
 ## Descripción del proyecto
 
