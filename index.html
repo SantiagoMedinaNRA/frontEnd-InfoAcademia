@@ -15,7 +15,7 @@
 <body>
 
   <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar navbar-expand-md navbar-infoacademica sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-infoacademica sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">InfoAcadémica</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
@@ -27,6 +27,8 @@
           <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
           <li class="nav-item"><a class="nav-link" href="admisiones.html">Admisiones</a></li>
           <li class="nav-item"><a class="nav-link" href="registro-academico.html">Registro Académico</a></li>
+          <li class="nav-item"><a class="nav-link" href="favoritos.html">Favoritos</a></li>
+          <li class="nav-item"><a class="nav-link" href="gestion.html">Gestión</a></li>
           <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
@@ -41,20 +43,90 @@
     </section>
 
     <!-- ===================== NOTICIAS DESTACADAS ===================== -->
-    <section class="container mb-5">
+    <section class="container mb-4">
+      <h2 class="section-title mt-0">NOTICIAS DESTACADAS</h2>
       <div class="row" id="contenedor-noticias" data-limite="3">
-        <img src="noticia-01.png" class="img-fluid" alt="Noticia">
-        <img src="noticia-02.png" class="img-fluid" alt="Noticia">
-        <img src="noticia-03.png" class="img-fluid" alt="Noticia">
-
         <!-- Las tarjetas de noticias se generan dinámicamente con js/noticias.js -->
+      </div>
+      <div class="text-center mb-5">
+        <a href="noticias.html" class="btn btn-oscuro">Ver todas las noticias</a>
+      </div>
+    </section>
+
+    <!-- ===================== SECCIÓN INFORMATIVA ===================== -->
+    <section class="info-seccion">
+      <div class="container">
+        <h2 class="section-title mt-0">¿POR QUÉ INFOACADÉMICA?</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <div class="info-item">
+              <div class="info-icono">📰</div>
+              <h3>Información centralizada</h3>
+              <p>Reúne en un solo lugar las noticias de admisiones, registro y vida académica.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="info-item">
+              <div class="info-icono">★</div>
+              <h3>Guarda tus favoritas</h3>
+              <p>Marca las noticias que te interesan y consúltalas cuando quieras desde tu navegador.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="info-item">
+              <div class="info-icono">✉️</div>
+              <h3>Estamos para ayudarte</h3>
+              <p>Escríbenos por el formulario de contacto y un asesor resolverá tus dudas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LLAMADO A LA ACCIÓN ===================== -->
+    <section class="container">
+      <div class="cta-seccion mb-5">
+        <h2>Empieza tu proceso académico hoy</h2>
+        <p>Consulta los requisitos de admisión y los trámites de registro.</p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          <a href="admisiones.html" class="btn btn-oscuro">Ver admisiones</a>
+          <a href="contacto.html" class="btn btn-outline-secondary">Contactar</a>
+        </div>
       </div>
     </section>
   </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer-infoacademica">
-    &copy; 2026 InfoAcadémica - Todos los derechos reservados
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>InfoAcadémica</h4>
+          <p>Mantente al día con tu proceso académico: admisiones, registro y vida universitaria.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="admisiones.html">Admisiones</a></li>
+            <li><a href="registro-academico.html">Registro Académico</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>Calle 123 #45-67, Bogotá</li>
+            <li>+57 (1) 123 4567</li>
+            <li>contacto@infoacademica.edu.co</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; <span id="anio">2026</span> InfoAcadémica - Todos los derechos reservados
+      </div>
+    </div>
   </footer>
 
   <!-- Framework JS: Bootstrap 5 (bundle incluye Popper) -->
