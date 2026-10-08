@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="section-title">MIS FAVORITOS</h1>
+  <div class="row">
+    @for (noticia of favoritas(); track noticia.id) {
+      <app-noticia-card [noticia]="noticia" [mostrarQuitar]="true" (quitar)="quitar($event)" />
+    } @empty {
+      <div class="col-12 text-center estado-vacio">
+        <div class="icono">★</div>
+        <p class="text-muted">Todavía no tienes noticias favoritas.</p>
+        <a routerLink="/noticias" class="btn btn-oscuro mt-2">Explorar noticias</a>
+      </div>
+    }
+  </div>
+</div>

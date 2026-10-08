@@ -1,0 +1,84 @@
+<div class="container">
+  <h1 class="section-title">GESTIÓN DE NOTICIAS</h1>
+  <p class="text-center text-muted mb-4">
+    Crea nuevas noticias o elimina las existentes. Los cambios se guardan en
+    tu navegador (localStorage) y se reflejan en el Home y en el listado de Noticias.
+  </p>
+
+  <div class="row g-4">
+    <!-- ---------- Formulario: crear noticia ---------- -->
+    <div class="col-12 col-lg-5">
+      <div class="gestion-card">
+        <h2 class="gestion-subtitulo">Crear noticia</h2>
+        <form [formGroup]="form" (ngSubmit)="publicar()" novalidate>
+          <div class="mb-3">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control" id="titulo" formControlName="titulo"
+              [class.is-invalid]="enviado() && form.controls.titulo.invalid" />
+            @if (enviado() && form.controls.titulo.invalid) {
+              <div class="invalid-feedback d-block">Ingresa un título (mínimo 5 caracteres).</div>
+            }
+          </div>
+
+          <div class="mb-3">
+            <label for="resumen" class="form-label">Resumen</label>
+            <input type="text" class="form-control" id="resumen" formControlName="resumen"
+              [class.is-invalid]="enviado() && form.controls.resumen.invalid" />
+            @if (enviado() && form.controls.resumen.invalid) {
+              <div class="invalid-feedback d-block">Ingresa un resumen breve (mínimo 10 caracteres).</div>
+            }
+          </div>
+
+          <div class="mb-3">
+            <label for="imagen" class="form-label">Ruta de imagen (opcional)</label>
+            <input type="text" class="form-control" id="imagen" formControlName="imagen"
+              placeholder="img/noticia-destacada.jpg" />
+            <small class="text-muted">Si la dejas vacía se usa la imagen por defecto (img/noticia-destacada.jpg).</small>
+          </div>
+
+          <div class="mb-3">
+            <label for="cuerpo" class="form-label">Contenido</label>
+            <textarea class="form-control" id="cuerpo" rows="5" formControlName="cuerpo"
+              [class.is-invalid]="enviado() && form.controls.cuerpo.invalid"
+              placeholder="Escribe el contenido de la noticia. Deja una línea en blanco para separar párrafos."></textarea>
+            @if (enviado() && form.controls.cuerpo.invalid) {
+              <div class="invalid-feedback d-block">Escribe el contenido de la noticia (mínimo 20 caracteres).</div>
+            }
+          </div>
+
+          <button type="submit" class="btn btn-oscuro">Publicar noticia</button>
+          @if (alerta()) {
+            <div class="alert alert-success alert-envio mostrar" role="alert">{{ alerta() }}</div>
+          }
+        </form>
+      </div>
+    </div>
+
+    <!-- ---------- Listado: eliminar noticias ---------- -->
+    <div class="col-12 col-lg-7">
+      <div class="gestion-card">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+          <h2 class="gestion-subtitulo mb-0">Noticias publicadas</h2>
+          <button type="button" class="btn btn-outline-secondary btn-sm" (click)="restaurar()">
+            Restaurar noticias de ejemplo
+          </button>
+        </div>
+        <div class="lista-gestion">
+          @for (noticia of noticias; track noticia.id) {
+            <div class="gestion-item">
+              <div class="gestion-item-info">
+                <a [routerLink]="['/noticia', noticia.id]" class="gestion-item-titulo">{{ noticia.titulo }}</a>
+                <p class="gestion-item-resumen">{{ noticia.resumen }}</p>
+              </div>
+              <button type="button" class="btn btn-eliminar" (click)="eliminar(noticia.id, noticia.titulo)">
+                Eliminar
+              </button>
+            </div>
+          } @empty {
+            <p class="text-muted mb-0">No hay noticias. Crea una con el formulario o restaura las de ejemplo.</p>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

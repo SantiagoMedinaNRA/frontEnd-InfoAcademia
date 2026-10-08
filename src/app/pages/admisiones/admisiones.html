@@ -1,0 +1,77 @@
+<!-- ===================== ENCABEZADO DE SECCIÓN ===================== -->
+<section class="seccion-hero">
+  <div class="container">
+    <h1>ADMISIONES</h1>
+    <p>Todo lo que necesitas saber para iniciar tu proceso de ingreso a la institución.</p>
+  </div>
+</section>
+
+<div class="container">
+  <!-- ---------- Introducción ---------- -->
+  <section class="mb-5">
+    <p class="texto-seccion">
+      El proceso de admisión de la Fundación Tecnológica Autónoma de Bogotá (FABA) está
+      diseñado para acompañarte paso a paso. Aquí encontrarás los requisitos, las etapas
+      del proceso y el calendario del periodo 2027-1.
+    </p>
+  </section>
+
+  <!-- ---------- Pasos del proceso ---------- -->
+  <section class="mb-5">
+    <h2 class="subseccion-title">Pasos del proceso</h2>
+    <div class="row g-4">
+      @for (paso of pasos; track paso.numero) {
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="paso-card">
+            <div class="paso-numero">{{ paso.numero }}</div>
+            <h3>{{ paso.titulo }}</h3>
+            <p>{{ paso.texto }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ---------- Requisitos ---------- -->
+  <section class="mb-5">
+    <h2 class="subseccion-title">Requisitos generales</h2>
+    <ul class="lista-requisitos">
+      @for (requisito of requisitos; track $index) {
+        <li>{{ requisito }}</li>
+      }
+    </ul>
+  </section>
+
+  <!-- ---------- Calendario ---------- -->
+  <section class="mb-5">
+    <h2 class="subseccion-title">Calendario 2027-1</h2>
+    <div class="table-responsive">
+      <table class="table tabla-info">
+        <thead>
+          <tr>
+            <th>Etapa</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (fila of calendario; track $index) {
+            <tr>
+              <td>{{ fila.etapa }}</td>
+              <td>{{ fila.fecha }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ---------- Llamado a la acción ---------- -->
+  <section class="cta-seccion mb-5">
+    <h2>¿Tienes dudas sobre tu proceso de admisión?</h2>
+    <p>Nuestro equipo de asesores está listo para ayudarte.</p>
+    <div class="d-flex gap-2 justify-content-center flex-wrap">
+      <a routerLink="/contacto" class="btn btn-oscuro">Contáctanos</a>
+      <a routerLink="/noticias" class="btn btn-outline-secondary">Ver noticias de admisiones</a>
+    </div>
+  </section>
+</div>

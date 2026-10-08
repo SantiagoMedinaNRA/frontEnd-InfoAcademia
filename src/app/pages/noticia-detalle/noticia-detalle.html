@@ -1,0 +1,24 @@
+<div class="container">
+  <article class="noticia-detalle">
+    @if (noticia(); as n) {
+      <img [src]="n.imagen" [alt]="n.titulo" />
+      <h1>{{ n.titulo }}</h1>
+      @for (parrafo of n.cuerpo; track $index) {
+        <p class="cuerpo">{{ parrafo }}</p>
+      }
+      <button type="button" class="btn btn-favorito" [class.activo]="esFavorito()" (click)="alternarFavorito()">
+        @if (esFavorito()) {
+          ★ Guardado en favoritos
+        } @else {
+          ★ Agregar a favoritos
+        }
+      </button>
+    } @else {
+      <h1>Noticia no encontrada</h1>
+      <p class="cuerpo">
+        La noticia que buscas no existe o fue eliminada.
+        Vuelve al <a routerLink="/noticias">listado de noticias</a>.
+      </p>
+    }
+  </article>
+</div>

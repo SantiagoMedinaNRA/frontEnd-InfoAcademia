@@ -1,91 +1,116 @@
-# InfoAcadémica
+# InfoAcadémica (Angular)
 
-Plataforma web de noticias tipo periódico digital, orientada a informar a la
-comunidad estudiantil sobre los procesos de **Admisiones**, **Registro y Control
-Académico** y la vida universitaria. Proyecto del módulo de **Desarrollo de
-Front-End** del Politécnico Grancolombiano.
+Tercera entrega del proyecto **InfoAcadémica**: la aplicación reconstruida con
+**Angular** (componentes, enlace de datos / binding, routing y servicios),
+partiendo de la versión en HTML/CSS/JavaScript de la segunda entrega.
 
-Este repositorio corresponde a la **segunda entrega**: una primera versión
-funcional del aplicativo construida con HTML, CSS y JavaScript, tomando como base
-la maquetación (mockups) definida en la primera entrega.
+Es una plataforma web de noticias tipo periódico digital orientada a informar a
+la comunidad estudiantil sobre **Admisiones**, **Registro y Control Académico** y
+la vida universitaria.
 
 ## Integrantes
 
-- Marta Teresa Velandia Urrego 
-- Carlos Mosquera Urrutia 
+- Marta Teresa Velandia Urrego
+- Carlos Mosquera Urrutia
 - Santiago Medina Peláez
 - Laura Sofia Castellanos Manrique
 
-## Descripción del proyecto
-
-InfoAcadémica centraliza la información académica de interés para los estudiantes.
-La navegación se organiza mediante un menú superior fijo presente en todas las
-vistas, y el contenido de las noticias se carga de forma dinámica desde
-JavaScript, sin necesidad de crear una página estática por cada artículo.
-
-## Funcionalidades
-
-- **Home**: sección de bienvenida (hero), noticias destacadas dinámicas, sección
-  informativa y llamados a la acción.
-- **Noticias**: listado completo de todas las noticias publicadas.
-- **Detalle de noticia**: contenido completo de la noticia seleccionada, con botón
-  para **agregar / quitar de favoritos** (persistencia con `localStorage`).
-- **Favoritos**: lista personalizada de las noticias que el usuario ha guardado.
-- **Gestión de noticias (Mini CRUD)**: crear nuevas noticias y eliminar las
-  existentes; los cambios persisten en `localStorage`. Incluye la opción de
-  restaurar las noticias de ejemplo.
-- **Admisiones**: pasos del proceso, requisitos y calendario.
-- **Registro Académico**: trámites frecuentes y fechas clave.
-- **Contacto**: formulario con validación de campos obligatorios y de correo, con
-  mensaje de confirmación.
-
 ## Tecnologías
 
-- **HTML5** y **CSS3** (estilos propios en `css/styles.css`).
-- **Bootstrap 5** (incluido localmente en `vendor/`) para el grid, la barra de
-  navegación y los formularios.
-- **JavaScript** nativo (sin frameworks) para la lógica de negocio.
+- **Angular 20** (componentes standalone, signals, control flow `@if` / `@for`).
+- **TypeScript**.
+- **Angular Router** con carga diferida (lazy loading) por ruta.
+- **Reactive Forms** para la validación de los formularios.
+- **Bootstrap 5** (instalado vía npm) para grid, navbar y formularios.
 - **localStorage** para la persistencia de noticias y favoritos.
 
 ## Estructura del proyecto
 
 ```
-frontEnd-InfoAcademia/
-├── index.html                 Home
-├── noticias.html              Listado de noticias
-├── noticia.html               Detalle de una noticia (?id=1, 2, 3, ...)
-├── favoritos.html             Lista personalizada de favoritos
-├── gestion.html               Gestión de noticias (crear / eliminar)
-├── admisiones.html            Sección Admisiones
-├── registro-academico.html    Sección Registro y Control Académico
-├── contacto.html              Formulario de contacto
-├── css/
-│   └── styles.css             Estilos propios del sitio
-├── js/
-│   ├── main.js                Lógica común (enlace activo del menú)
-│   ├── noticias-data.js       Datos semilla + capa NoticiasStore (CRUD sobre localStorage)
-│   ├── noticias.js            Renderiza las tarjetas de noticias (Home / Noticias)
-│   ├── noticia-detalle.js     Pinta el detalle y maneja "favoritos"
-│   ├── favoritos.js           Muestra la lista de favoritos
-│   ├── gestion.js             Mini CRUD de noticias
-│   └── contacto.js            Validación del formulario de contacto
-├── img/                       Imágenes de las noticias y favicon
-├── vendor/                    Bootstrap 5 (CSS y JS)
-└── README.md
+angular-app/
+├── src/
+│   ├── index.html                 Documento base (incluye <app-root>)
+│   ├── styles.css                 Estilos globales propios del sitio
+│   └── app/
+│       ├── app.ts                 Componente raíz (layout: navbar + outlet + footer)
+│       ├── app.routes.ts          Definición de rutas (lazy loading)
+│       ├── app.config.ts          Configuración (router, scroll)
+│       ├── models/
+│       │   └── noticia.ts         Interfaces Noticia y NuevaNoticia
+│       ├── data/
+│       │   └── noticias-semilla.ts  Noticias de ejemplo (semilla)
+│       ├── services/
+│       │   ├── noticias.service.ts  CRUD de noticias sobre localStorage (signals)
+│       │   └── favoritos.service.ts Gestión de favoritos sobre localStorage
+│       ├── components/
+│       │   ├── navbar/            Barra de navegación (routerLinkActive)
+│       │   ├── footer/            Pie de página
+│       │   └── noticia-card/      Tarjeta de noticia reutilizable (@Input/@Output)
+│       └── pages/
+│           ├── home/              Inicio: hero + destacadas + info + CTA
+│           ├── noticias/          Listado completo de noticias
+│           ├── noticia-detalle/   Detalle (/noticia/:id) + favoritos
+│           ├── favoritos/         Noticias guardadas
+│           ├── gestion/           Mini CRUD (Reactive Forms)
+│           ├── admisiones/        Pasos, requisitos y calendario
+│           ├── registro-academico/ Trámites y fechas clave
+│           └── contacto/          Formulario de contacto (Reactive Forms)
+├── public/
+│   ├── img/                       Imágenes de noticias y favicon
+│   └── favicon.ico
+├── angular.json                   Configuración de build (Bootstrap, budgets)
+└── package.json                   Dependencias y scripts (incl. deploy)
 ```
 
-## Cómo ejecutarlo
+## Conceptos de Angular usados
 
-No requiere instalación ni servidor. Hay dos formas de verlo:
+- **Componentes y binding**: interpolación `{{ }}`, property binding `[src]`,
+  event binding `(click)`, y comunicación padre/hijo con `@Input()` / `@Output()`
+  (ver `noticia-card`).
+- **Servicios e inyección de dependencias**: `NoticiasService` y
+  `FavoritosService` encapsulan el acceso a datos y se inyectan con `inject()`.
+- **Signals**: el estado de noticias y favoritos es reactivo; la UI se actualiza
+  sola cuando cambian.
+- **Routing**: navegación entre páginas sin recargar, con `routerLink` y rutas
+  cargadas de forma diferida.
+- **Reactive Forms**: validación de los formularios de Contacto y Gestión.
 
-1. Abrir `index.html` con doble clic en cualquier navegador (Chrome, Edge, Firefox).
+## Cómo ejecutarlo en local
 
-## Cómo funciona la persistencia
+Requisitos: Node.js 20+ y npm.
 
-- La primera vez que se abre el sitio, las **noticias de ejemplo** se copian a
-  `localStorage`. A partir de ahí, todas las noticias (incluidas las que crees o
-  elimines desde **Gestión**) se leen y guardan desde el navegador.
-- Los **favoritos** se guardan como una lista de identificadores en `localStorage`,
-  por lo que se recuerdan aunque recargues o cierres el navegador.
-- Desde **Gestión → "Restaurar noticias de ejemplo"** puedes volver al estado
-  inicial en cualquier momento.
+```bash
+cd angular-app
+npm install
+npm start
+```
+
+Luego abre `http://localhost:4200/` en el navegador.
+
+## Build de producción
+
+```bash
+npm run build
+```
+
+El resultado queda en `dist/angular-app/browser`.
+
+## Despliegue en GitHub Pages
+
+El proyecto incluye `angular-cli-ghpages`. Para publicar:
+
+```bash
+npm run deploy
+```
+
+Este comando compila con el `base-href` del repositorio
+(`/frontEnd-InfoAcademia/`) y publica el contenido en la rama `gh-pages`.
+La aplicación queda disponible en:
+
+```
+https://santiagomedinanra.github.io/frontEnd-InfoAcademia/
+```
+
+> Nota: `angular-cli-ghpages` genera automáticamente un `404.html` (copia del
+> `index.html`) para que las rutas de Angular funcionen al recargar la página.
+```

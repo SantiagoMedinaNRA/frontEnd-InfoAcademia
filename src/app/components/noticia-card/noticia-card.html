@@ -1,0 +1,16 @@
+<!-- Tarjeta reutilizable de noticia. Los valores vienen por property binding. -->
+<div class="col-12 col-md-6 col-lg-4 mb-4">
+  <div class="card noticia-card shadow-sm">
+    <img [src]="noticia.imagen" [alt]="noticia.titulo" />
+    <div class="card-body">
+      <h3 class="card-title">{{ noticia.titulo }}</h3>
+      <p class="card-text">{{ noticia.resumen }}</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <a class="btn btn-oscuro" [routerLink]="['/noticia', noticia.id]">ver más</a>
+        @if (mostrarQuitar) {
+          <button type="button" class="btn btn-favorito" (click)="onQuitar()">Quitar</button>
+        }
+      </div>
+    </div>
+  </div>
+</div>

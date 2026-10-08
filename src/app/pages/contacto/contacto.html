@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="section-title">CONTÁCTANOS</h1>
+
+  <form [formGroup]="form" (ngSubmit)="enviar()" class="contacto-form row justify-content-center g-3" novalidate>
+    <div class="col-12 col-md-8 col-lg-6">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre"
+        [class.is-invalid]="enviado() && form.controls.nombre.invalid" />
+      @if (enviado() && form.controls.nombre.invalid) {
+        <div class="invalid-feedback text-center d-block">Por favor ingresa tu nombre.</div>
+      }
+    </div>
+
+    <div class="col-12 col-md-8 col-lg-6">
+      <label for="correo">Correo Electrónico</label>
+      <input type="email" class="form-control" id="correo" formControlName="correo"
+        [class.is-invalid]="enviado() && form.controls.correo.invalid" />
+      @if (enviado() && form.controls.correo.invalid) {
+        <div class="invalid-feedback text-center d-block">Ingresa un correo electrónico válido.</div>
+      }
+    </div>
+
+    <div class="col-12 col-md-8 col-lg-6">
+      <label for="mensaje">Mensaje</label>
+      <textarea class="form-control" id="mensaje" rows="5" formControlName="mensaje"
+        [class.is-invalid]="enviado() && form.controls.mensaje.invalid"></textarea>
+      @if (enviado() && form.controls.mensaje.invalid) {
+        <div class="invalid-feedback text-center d-block">Escribe tu mensaje (mínimo 10 caracteres).</div>
+      }
+    </div>
+
+    <div class="col-12 col-md-8 col-lg-6 text-center">
+      <button type="submit" class="btn btn-oscuro">Enviar</button>
+      @if (confirmacion()) {
+        <div class="alert alert-success alert-envio mostrar" role="alert">{{ confirmacion() }}</div>
+      }
+    </div>
+  </form>
+</div>

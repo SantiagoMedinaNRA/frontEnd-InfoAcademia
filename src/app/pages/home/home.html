@@ -1,0 +1,62 @@
+<!-- ===================== HERO ===================== -->
+<section class="hero container">
+  <h1>MANTENTE AL DÍA CON TU PROCESO ACADÉMICO</h1>
+  <p>Encuentra las últimas noticias sobre Admisiones, Registro y Control y Vida Académica</p>
+</section>
+
+<!-- ===================== NOTICIAS DESTACADAS ===================== -->
+<section class="container mb-4">
+  <h2 class="section-title mt-0">NOTICIAS DESTACADAS</h2>
+  <div class="row">
+    @for (noticia of destacadas; track noticia.id) {
+      <app-noticia-card [noticia]="noticia" />
+    } @empty {
+      <p class="text-center text-muted col-12">Aún no hay noticias publicadas.</p>
+    }
+  </div>
+  <div class="text-center mb-5">
+    <a routerLink="/noticias" class="btn btn-oscuro">Ver todas las noticias</a>
+  </div>
+</section>
+
+<!-- ===================== SECCIÓN INFORMATIVA ===================== -->
+<section class="info-seccion">
+  <div class="container">
+    <h2 class="section-title mt-0">¿POR QUÉ INFOACADÉMICA?</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="info-item">
+          <div class="info-icono">📰</div>
+          <h3>Información centralizada</h3>
+          <p>Reúne en un solo lugar las noticias de admisiones, registro y vida académica.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="info-item">
+          <div class="info-icono">★</div>
+          <h3>Guarda tus favoritas</h3>
+          <p>Marca las noticias que te interesan y consúltalas cuando quieras desde tu navegador.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="info-item">
+          <div class="info-icono">✉️</div>
+          <h3>Estamos para ayudarte</h3>
+          <p>Escríbenos por el formulario de contacto y un asesor resolverá tus dudas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LLAMADO A LA ACCIÓN ===================== -->
+<section class="container">
+  <div class="cta-seccion mb-5">
+    <h2>Empieza tu proceso académico hoy</h2>
+    <p>Consulta los requisitos de admisión y los trámites de registro.</p>
+    <div class="d-flex gap-2 justify-content-center flex-wrap">
+      <a routerLink="/admisiones" class="btn btn-oscuro">Ver admisiones</a>
+      <a routerLink="/contacto" class="btn btn-outline-secondary">Contactar</a>
+    </div>
+  </div>
+</section>

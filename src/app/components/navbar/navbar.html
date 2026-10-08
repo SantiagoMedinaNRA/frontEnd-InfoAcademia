@@ -1,0 +1,40 @@
+<!-- Barra de navegación. routerLinkActive marca el enlace de la ruta activa. -->
+<nav class="navbar navbar-expand-lg navbar-infoacademica sticky-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">InfoAcadémica</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      aria-label="Abrir menú"
+      [attr.aria-expanded]="menuAbierto"
+      (click)="alternarMenu()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" [class.show]="menuAbierto" id="menuPrincipal">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="cerrarMenu()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/noticias" routerLinkActive="active" (click)="cerrarMenu()">Noticias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admisiones" routerLinkActive="active" (click)="cerrarMenu()">Admisiones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/registro-academico" routerLinkActive="active" (click)="cerrarMenu()">Registro Académico</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/favoritos" routerLinkActive="active" (click)="cerrarMenu()">Favoritos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gestion" routerLinkActive="active" (click)="cerrarMenu()">Gestión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacto" routerLinkActive="active" (click)="cerrarMenu()">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

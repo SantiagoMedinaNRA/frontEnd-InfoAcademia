@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="section-title">NOTICIAS</h1>
+  <div class="row">
+    @for (noticia of noticias; track noticia.id) {
+      <app-noticia-card [noticia]="noticia" />
+    } @empty {
+      <p class="text-center text-muted col-12">Aún no hay noticias publicadas.</p>
+    }
+  </div>
+</div>

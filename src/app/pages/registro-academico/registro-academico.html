@@ -1,0 +1,66 @@
+<!-- ===================== ENCABEZADO DE SECCIÓN ===================== -->
+<section class="seccion-hero">
+  <div class="container">
+    <h1>REGISTRO ACADÉMICO</h1>
+    <p>Gestiona tu matrícula, tus materias y los trámites de tu vida académica.</p>
+  </div>
+</section>
+
+<div class="container">
+  <!-- ---------- Introducción ---------- -->
+  <section class="mb-5">
+    <p class="texto-seccion">
+      La oficina de Registro y Control Académico centraliza los trámites relacionados con
+      tu matrícula, la inscripción de materias y la actualización de tu información. Aquí
+      encuentras un resumen de los servicios más consultados por los estudiantes.
+    </p>
+  </section>
+
+  <!-- ---------- Servicios ---------- -->
+  <section class="mb-5">
+    <h2 class="subseccion-title">Trámites frecuentes</h2>
+    <div class="row g-4">
+      @for (servicio of servicios; track $index) {
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="servicio-card">
+            <h3>{{ servicio.titulo }}</h3>
+            <p>{{ servicio.texto }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ---------- Fechas clave ---------- -->
+  <section class="mb-5">
+    <h2 class="subseccion-title">Fechas clave del semestre</h2>
+    <div class="table-responsive">
+      <table class="table tabla-info">
+        <thead>
+          <tr>
+            <th>Trámite</th>
+            <th>Periodo</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (fila of fechas; track $index) {
+            <tr>
+              <td>{{ fila.tramite }}</td>
+              <td>{{ fila.periodo }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ---------- Llamado a la acción ---------- -->
+  <section class="cta-seccion mb-5">
+    <h2>¿Necesitas ayuda con un trámite?</h2>
+    <p>Escríbenos y un asesor de Registro y Control te orientará.</p>
+    <div class="d-flex gap-2 justify-content-center flex-wrap">
+      <a routerLink="/contacto" class="btn btn-oscuro">Contáctanos</a>
+      <a routerLink="/noticias" class="btn btn-outline-secondary">Ver noticias académicas</a>
+    </div>
+  </section>
+</div>
