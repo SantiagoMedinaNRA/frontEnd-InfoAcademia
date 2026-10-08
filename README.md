@@ -27,7 +27,7 @@ la vida universitaria.
 ## Estructura del proyecto
 
 ```
-angular-app/
+frontEnd-InfoAcademia/   (raíz del repositorio)
 ├── src/
 │   ├── index.html                 Documento base (incluye <app-root>)
 │   ├── styles.css                 Estilos globales propios del sitio
@@ -80,7 +80,6 @@ angular-app/
 Requisitos: Node.js 20+ y npm.
 
 ```bash
-cd angular-app
 npm install
 npm start
 ```
